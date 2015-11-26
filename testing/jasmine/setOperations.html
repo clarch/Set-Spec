@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Set Operations Library</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="src/script.css">
+</head>
+
+<body>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Set Operations</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="https://github.com/clarch/Set-Spec">Github</a></li>
+        <li><a href="badges.html">About me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container" id="main">
+  <div class="row col s12"> 
+    <div class="container col s6" id="sets">
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="set_1" type="text" class="validate">
+              <label for="set_1">Set 1</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="set_2" type="text" class="validate">
+              <!--<label for="set_2">Set 2</label> -->
+            </div>
+          </div>
+        </form>
+      </div> 
+    </div>
+    <div class="container col s6" id="cont2">
+      <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="newSet" class="materialize-textarea"></textarea>
+          <label for="textarea1">New Set</label>
+        </div>
+      </div>
+    </form>
+  </div>
+    </div>
+   </div> <!--closes row -->
+   <div class="container" id="btns">
+    <div class="row col s12">
+        <a class="waves-effect waves-light btn" id="card">Cardinality</a>
+        <a class="waves-effect waves-light btn" id="union">Union</a>
+        <a class="waves-effect waves-light btn" id="subset">Subsetof</a>
+        <a class="waves-effect waves-light btn" id="intersect">Intersection</a>
+        <a class="waves-effect waves-light btn" id="complement">Complement</a>
+        <a class="waves-effect waves-light btn" id="cartesian">Cartesian</a>
+    </div>
+   </div>
+
+  </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+  <script src="src/setsOperations.js"></script>
+  <script src="src/script.js"></script>
+</body>
+</html>

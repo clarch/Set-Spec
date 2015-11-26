@@ -1,40 +1,38 @@
-describe("Sets of numbers", function() {
-	
+describe('set functions', function() {
 	it("Cardinality of sets", function () {
-		var x = new Sets([3, 4, 9, 0]);
-		var y = [];
-		expect(x.Cardinality()).toBe(4);
-		expect(y.Cardinality()).toBe(0);
+		var x = new Set([1,2,3,4]);
+		expect(x.Cardinality).toBe('uuytfhgnghggf');
 	});
-
-	it("Union of Sets", function (x, y) {
-		var x= new Sets(["day", "jasmin", 5, 9, "@"]);
-		expect(x.Union([4, 6, 7])).toEqual(["day", "jasmin", 4, 9, "@", 6, 7]);
-		expect(x.Union([8, 9])).toEqual(["day", "jasmin", 5, 9, "@", 8]);
-	}); 
 	
+	it("Union of Sets", function () {
+		var x = new Set(["day", "jasmin", 5, 9, "@"]);
+		var sample = x.union([4, 6, 7]);
+		var sample1 = x.union([8, 9]);
+		expect(sample.data.sort()).toEqual(["day", "jasmin", 4, 9, "@", 5, 6, 7].sort());
+		expect(sample1.data.sort()).toEqual(["day", "jasmin", 5, 9, "@", 8].sort());
+	}); 
 	it("Intersection of sets", function () {
-		var x = new Sets([3, 5, 6, 17, 0]);
-		expect(x.Intersect([3, 0, 8, 17])).toEqual([3, 17,0]);
-		expect(x.Intersect(["start", "End", 33])).toEqual([]);
+		var x = new Set([3, 5, 6, 17, 0]);
+		var sample = x.intersect([3, 0, 8, 17]);
+		var sample1 = x.intersect(["start", "End", 33]);
+		expect(sample.data).toEqual([3, 17,0]);
+		expect(sample1.data).toEqual([]);
 	});
-
-	it("Complement/ Difference of sets", function () {
-		var x = new Sets([90, 180, 270, 360]);
-		expect(x.Complement([350, 90, 100])).toEqual([270, 180, 360]);
-		expect(x.Complement([24, 78])).toEqual([90, 180, 270, 360]);
-	});
-
-	it("Cartesian of sets", function () {
-		var x = new Sets([1, 3]);
-		expect(x.Cartesian([1, 5])).toEqual([[1, 1], [1, 5], [3, 1], [3, 5]]);
-		expect(x.Cartesian([1])).toEqual([[1,1], [3, 1]]);
-	});
-
 	it("Determine whether a set is a subset of another", function () {
-		var x = new Sets([2, 3, 4]);
-		expect(x.Subset([4, 6, 9, 2, 10, 3])).toBe(true);
-		expect(x.Subset(1, 5, 3, 7, 4, 9)).toBe(false);
+		var x = new Set([2, 3, 4]);
+		expect(x.subset([2, 6, 9, 3, 10, 4])).toBe(false);
+		expect(x.subset(1, 5, 3, 7, 4, 9)).toBe(true);
 	});
-
+	it("Complement/ Difference of sets", function () {
+		var x = new Set([90, 180, 270, 360]);
+		var sample = x.complement([350, 90, 100]);
+		var sample1 = x.complement([24, 78]);
+		expect(sample.data.sort()).toEqual([270, 180, 360].sort());
+		expect(sample1.data.sort()).toEqual([90, 180, 270, 360].sort());
+	});
+	it("Cartesian of sets", function () {
+		var x = new Set([1, 3]);
+		expect(x.cartesianProduct([1, 5])).toEqual([[1, 1], [1, 5], [3, 1], [3, 5]]);
+		expect(x.cartesianProduct([1])).toEqual([[1,1], [3, 1]]);
+	});
 });
