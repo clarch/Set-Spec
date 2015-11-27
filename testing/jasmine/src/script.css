@@ -2,19 +2,8 @@
 	margin: 450px;
 }
 
-#cont2 {
-	/*border: 2px solid red;*/
-}
-
 #btns {
-	/*border: 2px dashed red;*/
 	display: inline;
 	text-align: center;
 }
 
-/*#sets {
-	border: 2px dashed green;
-}
-#main {
-	border: 2px dashed black;
-}
